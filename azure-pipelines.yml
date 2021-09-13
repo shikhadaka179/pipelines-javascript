@@ -18,5 +18,4 @@ steps:
 - script: |
     npm install
     npm run build
-- script: tsc --target ES6 --strict true --project tsconfigs/production.json
   displayName: 'npm install and build'
