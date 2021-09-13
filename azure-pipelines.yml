@@ -19,7 +19,13 @@ steps:
   inputs:
     testRunner: JUnit
     testResultsFiles: '**/TEST-RESULTS.xml'
-
+    testRunTitle: 'Test results for JavaScript using gulp'
+- task: PublishCodeCoverageResults@1
+  inputs: 
+    codeCoverageTool: Cobertura
+    summaryFileLocation: '$(System.DefaultWorkingDirectory)/**/*coverage.xml'
+    reportDirectory: '$(System.DefaultWorkingDirectory)/**/coverage'
+    
 - script: |
     npm install
     npm run build
